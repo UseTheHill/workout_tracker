@@ -10,16 +10,21 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/tracker", {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
-  useUnifiedToplogy: true,
-});
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/workoutTrackerDB",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  }
+);
 
 // routes
 app.use(require("./routes/api.js"));
 
 app.listen(PORT, () => {
-  console.log(`Express/Node.js server running on: http://localhost:${PORT}/ \n`);
+  console.log(
+    `Express/Node.js server running on: http://localhost:${PORT}/ \n`
+  );
 });
