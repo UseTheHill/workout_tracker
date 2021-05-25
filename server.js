@@ -16,3 +16,10 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/tracker", {
   useCreateIndex: true,
   useUnifiedToplogy: true,
 });
+
+// routes
+app.use(require("./routes/api.js"));
+
+app.listen(PORT, () => {
+  console.log(`Express/Node.js server running on: http://localhost:${PORT}/ \n`);
+});
