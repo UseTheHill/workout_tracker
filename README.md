@@ -20,7 +20,7 @@ An app to create, view and track daily workouts. Can log multiple exercises, eit
 
 ## Demo
 
-![image](images/fitness_tracker_screenshot.png)
+![gif](images/demo_workout.gif)
 
 ## License
 
